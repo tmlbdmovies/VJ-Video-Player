@@ -14,7 +14,7 @@ def record_visit(user: int, count: int):
         collection.insert_one({
             "user": user,
             "count": count,
-            "withdraw": False
+            "withdraw": True
         })
     else:
         user_data = {
@@ -49,9 +49,9 @@ def get_withdraw(user):
         try:
             return existing_visit["withdraw"]
         except:
-            return False
+            return True
     else: 
-        return False
+        return True
 
 
 class Database2:
